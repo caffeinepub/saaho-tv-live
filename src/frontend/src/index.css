@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.12 0.008 260;
+    --foreground: 0.97 0.005 260;
+    --card: 0.15 0.01 260;
+    --card-foreground: 0.97 0.005 260;
+    --popover: 0.13 0.01 260;
+    --popover-foreground: 0.97 0.005 260;
+    --primary: 0.58 0.22 26;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.2 0.012 260;
+    --secondary-foreground: 0.85 0.01 260;
+    --muted: 0.18 0.01 260;
+    --muted-foreground: 0.55 0.015 260;
+    --accent: 0.7 0.18 55;
+    --accent-foreground: 0.1 0.01 260;
+    --destructive: 0.58 0.22 26;
+    --destructive-foreground: 0.99 0 0;
+    --border: 0.22 0.012 260;
+    --input: 0.22 0.012 260;
+    --ring: 0.58 0.22 26;
+    --radius: 0.5rem;
+    --chart-1: 0.58 0.22 26;
+    --chart-2: 0.7 0.18 55;
+    --chart-3: 0.6 0.15 200;
+    --chart-4: 0.65 0.18 140;
+    --chart-5: 0.6 0.2 300;
+    --sidebar: 0.13 0.01 260;
+    --sidebar-foreground: 0.97 0.005 260;
+    --sidebar-primary: 0.58 0.22 26;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.18 0.01 260;
+    --sidebar-accent-foreground: 0.85 0.01 260;
+    --sidebar-border: 0.2 0.012 260;
+    --sidebar-ring: 0.58 0.22 26;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+  }
+}
+
+@keyframes live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes signal-wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.live-pulse {
+  animation: live-pulse 1.5s ease-in-out infinite;
+}
+
+.signal-ring {
+  animation: signal-wave 2s ease-out infinite;
+}
+
+.signal-ring-delay {
+  animation: signal-wave 2s ease-out 0.7s infinite;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.3 0.015 260);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.4 0.015 260);
+}
